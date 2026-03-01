@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grid Genesis — Physics-Informed Intelligence for the Energy Transition. Probabilistic power flow, GNN-based theft detection, and spatio-temporal renewable forecasting." />
+  <meta name="theme-color" content="#040810" />
+  <title>Grid Genesis — Physics-Informed Intelligence for the Energy Transition</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/typography.css" />
+  <link rel="stylesheet" href="/src/styles/navigation.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__inner">
+      <svg class="preloader__logo" width="60" height="60" viewBox="0 0 60 60">
+        <polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/>
+        <path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="preloader__bolt"/>
+      </svg>
+      <div class="preloader__text">GRID GENESIS</div>
+      <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-ring" class="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav id="main-nav" class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Grid Genesis home">
+        <svg class="nav__logo-mark" width="36" height="36" viewBox="0 0 60 60">
+          <polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/>
+          <path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-bolt"/>
+        </svg>
+        <span class="nav__logo-text">GRID GENESIS</span>
+      </a>
+      <div class="nav__links">
+        <a href="#products" class="nav__link" data-magnetic>Products</a>
+        <a href="#about" class="nav__link" data-magnetic>About Us</a>
+        <a href="#team" class="nav__link" data-magnetic>Our Team</a>
+        <a href="#research" class="nav__link" data-magnetic>Research & Publications</a>
+        <a href="#contact" class="nav__cta magnetic-btn" data-magnetic>Contact for Demo →</a>
+      </div>
+      <button class="nav__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <a href="#products" class="mobile-nav__link">Products</a>
+    <a href="#about" class="mobile-nav__link">About Us</a>
+    <a href="#team" class="mobile-nav__link">Our Team</a>
+    <a href="#research" class="mobile-nav__link">Research & Publications</a>
+    <a href="#contact" class="mobile-nav__link">Contact for Demo</a>
+  </div>
+
+  <!-- ========== SECTION 1: HERO ========== -->
+  <section id="hero" class="section section--hero" aria-label="Hero — Surreal grid landscape">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    <div class="hero__overlay">
+      <h1 class="hero__title glitch-text" data-text="GRID GENESIS">GRID GENESIS</h1>
+      <p class="hero__tagline">Physics-Informed Intelligence for the Energy Transition</p>
+      <div class="hero__scroll-hint">
+        <span>Scroll to enter the wire</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 2: ZOOM TUNNEL ========== -->
+  <section id="zoom-section" class="section section--zoom" aria-label="Cinematic zoom into transmission wire">
+    <canvas id="tunnel-canvas" class="tunnel-canvas"></canvas>
+    <div id="genesis-reveal" class="genesis-reveal">
+      <h2 class="genesis-reveal__title">GRID GENESIS</h2>
+      <p class="genesis-reveal__tagline">Physics-Informed Intelligence for the Energy Transition</p>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 3: ABOUT ========== -->
+  <section id="about" class="section section--about" aria-label="About Grid Genesis">
+    <canvas id="about-canvas" class="about-canvas"></canvas>
+    <div class="container about__grid">
+      <div class="about__content">
+        <h2 class="section-title scramble-text">"We build the intelligence layer that governs energy systems too complex for human intuition alone."</h2>
+        <div class="about__text">
+          <p>Grid Genesis builds physics-informed AI at the intersection of power systems engineering, Riemannian geometry, and probabilistic machine learning. We see the electricity grid not as a collection of isolated data points — but as a living graph, where every node, every edge, and every flow of electrons is connected to everything else. That topology is where the intelligence lives.</p>
+          <p>Our three products address the three most quantifiable inefficiencies in the global energy transition: $96 billion lost annually to electricity theft, 1,400 gigawatts of clean energy trapped in interconnection queues, and hundreds of millions in avoidable renewable imbalance costs caused by inadequate forecasting. Each product is built on the same foundation — graph neural networks that respect physics, probabilistic models that quantify uncertainty honestly, and a strict principle that humans always make the final decision.</p>
+          <p>Founded by researchers from Sahyadri College of Engineering and Management, Mangaluru, Grid Genesis emerged from published work in quantum information geometry, adaptive multi-objective optimization, and spatio-temporal forecasting. We are not incrementally improving existing tools. We are replacing the mathematical foundations they are built on.</p>
+        </div>
+      </div>
+      <div class="about__metrics">
+        <div class="metric" data-target="96" data-prefix="$" data-suffix="B">
+          <span class="metric__number">$0B</span>
+          <span class="metric__label">Annual global electricity theft losses addressed by GridGuard</span>
+          <div class="metric__line"><span class="metric__pulse"></span></div>
+        </div>
+        <div class="metric" data-target="1000" data-suffix="×">
+          <span class="metric__number">0×</span>
+          <span class="metric__label">Speedup FluxEngine achieves over traditional power flow solvers</span>
+          <div class="metric__line"><span class="metric__pulse"></span></div>
+        </div>
+        <div class="metric" data-target="1400" data-suffix=" GW">
+          <span class="metric__number">0 GW</span>
+          <span class="metric__label">Clean energy trapped in US interconnection queues</span>
+          <div class="metric__line"><span class="metric__pulse"></span></div>
+        </div>
+        <div class="metric" data-target="8" data-prefix="<" data-suffix="%">
+          <span class="metric__number">&lt;0%</span>
+          <span class="metric__label">nRMSE forecasting error target for GridCast-ST</span>
+          <div class="metric__line"><span class="metric__pulse"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 4: FLUXENGINE ========== -->
+  <section id="products" class="section section--product section--fluxengine" aria-label="FluxEngine product">
+    <canvas id="fluxengine-canvas" class="product-canvas"></canvas>
+    <div class="product__overlay">
+      <div class="product__header">
+        <span class="product__badge">PRODUCT 01</span>
+        <h2 class="product__name">FLUXENGINE™</h2>
+        <p class="product__tagline">"We don't predict your grid's limit. We generate 10,000 parallel universes and find the MW hiding in every one."</p>
+      </div>
+      <div class="product__cinema-text" id="flux-cinema-text"></div>
+    </div>
+
+    <div class="product__detail container">
+      <h3 class="product__detail-title">FLUXENGINE™ — Probabilistic Interconnection Intelligence</h3>
+
+      <div class="product__columns">
+        <div class="product__col">
+          <h4>THE PROBLEM</h4>
+          <p>The US interconnection queue holds 1,400 GW of generation and 890 GW of storage — more than twice the country's total installed capacity. Only 13% of projects entering the queue ever reach commercial operation. The median wait: 4+ years. Traditional interconnection studies run one deterministic scenario. One snapshot. One answer. Developers wait 18 months for a number that may not reflect reality when their project actually builds.</p>
+        </div>
+        <div class="product__col">
+          <h4>THE SOLUTION — TWO COMPONENTS</h4>
+          <p><strong class="text-cyan">FLUXGEN:</strong> A Score-Based Diffusion Model with Kirchhoff-Constrained scenario generation. Instead of one operating point, FluxGen generates 10,000+ synthetic 8,760-hour scenarios statistically indistinguishable from reality — including correlated extreme events (heatwave + solar ramp + wind drought simultaneously) that traditional studies miss entirely.</p>
+          <p><strong class="text-cyan">FLUXFLOW:</strong> A Heterogeneous Graph Neural Network power flow surrogate that validates each scenario 1,000× faster than Newton-Raphson. Where PSS/E takes 50-100ms per solution, FluxFlow takes 0.05-0.1ms. At 87.6 million scenario-hours, that difference is the difference between weeks and minutes.</p>
+        </div>
+      </div>
+
+      <div class="product__offer-card">
+        <h4>THE OUTPUT — FLUXOFFER</h4>
+        <div class="offer-grid">
+          <div class="offer-item"><span class="offer-label">Firm Capacity (0% curtailment risk)</span><span class="offer-value">42 MW</span></div>
+          <div class="offer-item"><span class="offer-label">Conditional Capacity (&lt;0.5% curtailment)</span><span class="offer-value">85 MW</span></div>
+          <div class="offer-item"><span class="offer-label">Maximum with Curtailment (&lt;2% hours)</span><span class="offer-value">128 MW</span></div>
+          <div class="offer-item"><span class="offer-label">Binding Constraint</span><span class="offer-value">Line 47→52 (thermal, summer peak)</span></div>
+          <div class="offer-item"><span class="offer-label">Recommended Flex Asset</span><span class="offer-value">20MW/80MWh BESS eliminates curtailment</span></div>
+        </div>
+      </div>
+
+      <div class="product__metrics-row">
+        <div class="product__metric"><span class="pm-val">1,000×</span><span class="pm-label">Speedup over Newton-Raphson AC power flow</span></div>
+        <div class="product__metric"><span class="pm-val">10,000+</span><span class="pm-label">Scenarios per interconnection analysis</span></div>
+        <div class="product__metric"><span class="pm-val">&lt;0.1%</span><span class="pm-label">Voltage magnitude error vs full ACPF solver</span></div>
+        <div class="product__metric"><span class="pm-val">&gt;20%</span><span class="pm-label">Additional capacity unlocked vs deterministic studies</span></div>
+        <div class="product__metric"><span class="pm-val">Minutes</span><span class="pm-label">Time to produce a Flexible Connection Agreement</span></div>
+      </div>
+
+      <div class="product__who">
+        <h4>WHO USES IT</h4>
+        <ul>
+          <li>Independent Power Producers with projects in interconnection queues</li>
+          <li>Transmission planning engineers at utilities and ISOs</li>
+          <li>Project finance lenders requiring probabilistic cost estimates</li>
+          <li>Renewable energy developers optimizing interconnection strategy</li>
+        </ul>
+      </div>
+
+      <div class="product__safety">
+        <h4>⚡ SAFETY PRINCIPLE</h4>
+        <p>FluxEngine is strictly decision support. Every Flexible Connection Agreement is reviewed by planning engineers before execution. Every operational curtailment playbook is implemented manually by system operators via SCADA. No autonomous grid action. Ever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 5: GRIDGUARD ========== -->
+  <section id="gridguard" class="section section--product section--gridguard" aria-label="GridGuard-GNN product">
+    <canvas id="gridguard-canvas" class="product-canvas"></canvas>
+    <div class="product__overlay">
+      <div class="product__header">
+        <span class="product__badge">PRODUCT 02</span>
+        <h2 class="product__name">GRIDGUARD-GNN</h2>
+        <p class="product__tagline">"We don't just find the needle in the haystack — we find the neighborhood conspiring to hide it."</p>
+      </div>
+      <div class="product__cinema-text" id="guard-cinema-text"></div>
+    </div>
+
+    <div class="product__detail container">
+      <h3 class="product__detail-title">GRIDGUARD-GNN — Revenue Assurance & Loss Analytics</h3>
+
+      <div class="product__columns">
+        <div class="product__col">
+          <h4>THE PROBLEM</h4>
+          <p>$96 billion is stolen from electricity utilities every year through meter tampering, billing fraud, and illegal connections. In emerging markets — India, Brazil, South Africa, Southeast Asia — non-technical loss rates reach 20-40% of total generation. Traditional detection treats every meter as an independent time series. It misses the pattern entirely.</p>
+          <p>The flaw: electricity theft is a network phenomenon. When a customer bypasses their meter, the energy balance of their entire transformer cluster breaks down. The theft is written in the topology — not in any single meter's data.</p>
+        </div>
+        <div class="product__col">
+          <h4>THE SOLUTION — ST-GAT ARCHITECTURE</h4>
+          <p>GridGuard-GNN models the entire distribution network as a graph. Every meter is a node. Every transformer connection is an edge.</p>
+          <p><strong class="text-cyan">SPATIAL:</strong> GAT layers aggregate consumption across electrically adjacent meters. Attention weights learn which neighbors are most informative for detecting energy balance violations. A tampered meter in a cluster of 40 cannot hide — the imbalance between what the transformer supplies and what downstream meters report exposes it.</p>
+          <p><strong class="text-cyan">TEMPORAL:</strong> GRU layers capture the daily and weekly consumption rhythms of each customer type. Theft has a temporal signature too — the flat line of a bypassed meter, the sudden drop when a connection is made.</p>
+        </div>
+      </div>
+
+      <div class="product__explainability">
+        <h4>EXPLAINABILITY</h4>
+        <p>Every flagged meter comes with:</p>
+        <ul>
+          <li>→ SHAP feature importance showing which consumption patterns drove the flag</li>
+          <li>→ GAT attention weight visualization showing which neighbors contributed</li>
+          <li>→ Neighbor comparison chart: flagged meter vs transformer cluster average</li>
+          <li>→ Energy balance summary: transformer supply vs downstream meter readings</li>
+        </ul>
+        <p>A revenue protection analyst reads each explanation card in 30 seconds.</p>
+      </div>
+
+      <div class="product__metrics-row">
+        <div class="product__metric"><span class="pm-val">&gt;96%</span><span class="pm-label">F1-score on NTL detection (vs ~92% non-graph methods)</span></div>
+        <div class="product__metric"><span class="pm-val">&lt;3%</span><span class="pm-label">False positive rate (field crew dispatch precision)</span></div>
+        <div class="product__metric"><span class="pm-val">$96B</span><span class="pm-label">Annual global NTL losses addressable</span></div>
+        <div class="product__metric"><span class="pm-val">20-40%</span><span class="pm-label">NTL rates in target emerging markets</span></div>
+      </div>
+
+      <div class="product__who">
+        <h4>TARGET GEOGRAPHIES</h4>
+        <ul>
+          <li>India: BEST Mumbai, BSES Delhi, CESC Kolkata, Tata Power</li>
+          <li>Brazil: Enel Brasil, Cemig, CPFL Energia</li>
+          <li>South Africa: Eskom distribution division</li>
+          <li>Southeast Asia: PLN Indonesia, Meralco Philippines</li>
+        </ul>
+      </div>
+
+      <div class="product__safety">
+        <h4>⚡ SAFETY PRINCIPLE</h4>
+        <p>GridGuard produces a prioritized suspect list. Field inspection teams review every flag before dispatch. No automatic billing adjustments. No automatic service disconnection. Human confirmation required at every step.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 6: GRIDCAST ========== -->
+  <section id="gridcast" class="section section--product section--gridcast" aria-label="GridCast-ST product">
+    <canvas id="gridcast-canvas" class="product-canvas"></canvas>
+    <div class="product__overlay">
+      <div class="product__header">
+        <span class="product__badge">PRODUCT 03</span>
+        <h2 class="product__name">GRIDCAST-ST</h2>
+        <p class="product__tagline">"We don't forecast the sun — we forecast the shadow, station by station, minute by minute."</p>
+      </div>
+      <div class="product__cinema-text" id="cast-cinema-text"></div>
+    </div>
+
+    <div class="product__detail container">
+      <h3 class="product__detail-title">GRIDCAST-ST — Spatio-Temporal Renewable Intelligence</h3>
+
+      <div class="product__columns">
+        <div class="product__col">
+          <h4>THE PROBLEM</h4>
+          <p>A cloud shadow moving at 60 km/h across a solar farm can drop generation by 200 MW in 8 minutes. A wind ramp event can add or remove 300 MW from a regional grid in 15 minutes. The forecasting tools most grid operators use today treat each generation site independently. A single-station model predicting solar output at Farm A has no knowledge that a cloud shadow just crossed Farm B — 80km upwind — 12 minutes ago. That shadow is coming. The model doesn't know. This costs the industry hundreds of millions annually in unnecessary reserve costs and avoidable imbalance penalties.</p>
+        </div>
+        <div class="product__col">
+          <h4>THE SOLUTION — GRAPH-TRANSFORMER ARCHITECTURE</h4>
+          <p><strong class="text-cyan">THE GRAPH COMPONENT:</strong> A Spatio-Temporal GNN connects nearby generation stations as graph nodes. GCN layers capture stable, geography-driven spatial correlations — terrain, altitude, coastal proximity. This is the map of stable relationships.</p>
+          <p><strong class="text-cyan">THE TRANSFORMER COMPONENT:</strong> A Gated Transformer with time-lagged attention captures dynamic, weather-driven interactions. When a cloud shadow crosses Station A, the model knows Station B (80km southeast, in the prevailing wind direction) will experience the same shadow in approximately 12 minutes.</p>
+          <p><strong class="text-cyan">THE SATELLITE LAYER:</strong> GOES-R satellite imagery feeds a Swin Transformer vision encoder that detects developing cloud formations before they affect any ground station. The system sees what is coming before any sensor on the ground can measure it.</p>
+        </div>
+      </div>
+
+      <div class="product__ramp">
+        <h4>RAMP EVENT DETECTION</h4>
+        <p>A dedicated classification head predicts whether generation will change by more than 10% of installed capacity in any 15-minute window within the next 30 minutes. When a ramp alert fires, grid operators receive: predicted ramp magnitude in MW, timing window, confidence level, and recommended reserve pre-positioning action.</p>
+      </div>
+
+      <div class="product__metrics-row">
+        <div class="product__metric"><span class="pm-val">&lt;8%</span><span class="pm-label">nRMSE intra-hour (target)</span></div>
+        <div class="product__metric"><span class="pm-val">&lt;12%</span><span class="pm-label">nRMSE day-ahead (target)</span></div>
+        <div class="product__metric"><span class="pm-val">25.9%</span><span class="pm-label">Error reduction vs commercial forecasters at 1-hour horizon</span></div>
+        <div class="product__metric"><span class="pm-val">5</span><span class="pm-label">Simultaneous forecast horizons: 15min, 1hr, 6hr, 24hr, 72hr</span></div>
+        <div class="product__metric"><span class="pm-val">30 min</span><span class="pm-label">Ramp event detection lead time</span></div>
+      </div>
+
+      <div class="product__safety">
+        <h4>⚡ SAFETY PRINCIPLE</h4>
+        <p>GridCast-ST forecasts inform reserve scheduling decisions. All dispatch decisions are made by licensed grid operators. Ramp alerts go to control room displays — not to automatic dispatch systems. The forecast is the intelligence. The operator is the authority.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 7: RESEARCH ========== -->
+  <section id="research" class="section section--research" aria-label="Research and Publications">
+    <div class="container">
+      <h2 class="section-title">Research & Publications</h2>
+      <p class="section-subtitle">We publish what we build and build what we publish.</p>
+
+      <!-- Floating math symbols background -->
+      <div class="math-particles" aria-hidden="true">
+        <span class="math-sym">∑</span><span class="math-sym">∫</span><span class="math-sym">∂</span>
+        <span class="math-sym">∇</span><span class="math-sym">ψ</span><span class="math-sym">λ</span>
+        <span class="math-sym">∑</span><span class="math-sym">∫</span><span class="math-sym">∂</span>
+        <span class="math-sym">∇</span><span class="math-sym">ψ</span><span class="math-sym">λ</span>
+      </div>
+
+      <div class="research-grid">
+        <!-- QILTR -->
+        <div class="research-card" data-tilt>
+          <div class="research-card__front">
+            <div class="research-card__cover research-card__cover--blue">
+              <svg viewBox="0 0 200 260" class="research-card__cover-art">
+                <defs><linearGradient id="rc1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00D4FF" stop-opacity="0.3"/><stop offset="100%" stop-color="#1A0A2E" stop-opacity="0.8"/></linearGradient></defs>
+                <rect width="200" height="260" fill="url(#rc1)" rx="4"/>
+                <g stroke="#00D4FF" stroke-width="0.5" fill="none" opacity="0.6">
+                  <polygon points="100,40 140,65 140,105 100,130 60,105 60,65"/>
+                  <polygon points="100,60 125,75 125,100 100,115 75,100 75,75"/>
+                  <line x1="100" y1="40" x2="100" y2="60"/><line x1="140" y1="65" x2="125" y2="75"/>
+                  <line x1="140" y1="105" x2="125" y2="100"/><line x1="60" y1="65" x2="75" y2="75"/>
+                </g>
+                <text x="100" y="170" fill="#E8F4FF" font-size="9" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">QILTR</text>
+                <text x="100" y="190" fill="#00D4FF" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Quantum-Inspired</text>
+                <text x="100" y="200" fill="#00D4FF" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Local Tensor Regression</text>
+              </svg>
+            </div>
+            <div class="research-card__info">
+              <div class="research-card__badges">
+                <span class="badge badge--research">RESEARCH PAPER</span>
+                <span class="badge badge--preprint">PREPRINT</span>
+              </div>
+              <h3 class="research-card__title">Quantum-Inspired Local Tensor Regression</h3>
+              <p class="research-card__authors">Shetty Nihal Naveen, Ashil Shetty, B Karthik Udupa</p>
+              <p class="research-card__institution">Sahyadri College of Engineering and Management, Mangaluru</p>
+              <p class="research-card__pub">Published: Research Square, 2026</p>
+              <div class="research-card__tags">
+                <span class="tag">Riemannian Geometry</span>
+                <span class="tag">Quantum Information</span>
+                <span class="tag">Tensor Regression</span>
+              </div>
+            </div>
+          </div>
+          <div class="research-card__back">
+            <h4>What it is</h4>
+            <p>QILTR recasts local tensor regression as a Riemannian optimization problem on the manifold of quantum states. By replacing standard Euclidean distance kernels with the Bures distance — derived from Quantum Fisher Information — QILTR achieves better-conditioned local Hessians and improved solution quality on multi-linear systems.</p>
+            <h4>Key findings</h4>
+            <ul>
+              <li>→ 4.9× improvement in outlier robustness</li>
+              <li>→ +1.22% solution quality improvement on QM9 quantum chemistry benchmark</li>
+              <li>→ Polynomial-time complexity — computationally tractable for real systems</li>
+              <li>→ Formal convergence proof under local geodesic convexity</li>
+            </ul>
+            <h4>Relevance to Grid Genesis</h4>
+            <p>The information geometry framework informs the uncertainty quantification layer in FluxEngine, where power system state spaces exhibit the same non-Euclidean geometry that motivated the Bures distance approach.</p>
+            <a href="#" class="research-card__link magnetic-btn">Read Paper →</a>
+          </div>
+        </div>
+
+        <!-- AMODO-EO -->
+        <div class="research-card" data-tilt>
+          <div class="research-card__front">
+            <div class="research-card__cover research-card__cover--purple">
+              <svg viewBox="0 0 200 260" class="research-card__cover-art">
+                <defs><linearGradient id="rc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A0A2E" stop-opacity="0.9"/><stop offset="100%" stop-color="#00FFE5" stop-opacity="0.2"/></linearGradient></defs>
+                <rect width="200" height="260" fill="url(#rc2)" rx="4"/>
+                <g stroke="#00FFE5" stroke-width="0.5" fill="none" opacity="0.5">
+                  <circle cx="100" cy="80" r="15"/><circle cx="75" cy="110" r="10"/><circle cx="130" cy="105" r="12"/>
+                  <circle cx="90" cy="55" r="8"/><circle cx="120" cy="60" r="6"/>
+                  <line x1="100" y1="80" x2="75" y2="110"/><line x1="100" y1="80" x2="130" y2="105"/>
+                  <line x1="100" y1="80" x2="90" y2="55"/><line x1="100" y1="80" x2="120" y2="60"/>
+                  <line x1="75" y1="110" x2="130" y2="105"/>
+                </g>
+                <text x="100" y="170" fill="#E8F4FF" font-size="9" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">AMODO-EO</text>
+                <text x="100" y="190" fill="#00FFE5" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Adaptive Multi-Objective</text>
+                <text x="100" y="200" fill="#00FFE5" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Drug Optimization</text>
+              </svg>
+            </div>
+            <div class="research-card__info">
+              <div class="research-card__badges">
+                <span class="badge badge--research">RESEARCH PAPER</span>
+              </div>
+              <h3 class="research-card__title">AMODO-EO: Adaptive Multi-Objective Drug Optimization with Emergent Objectives</h3>
+              <p class="research-card__authors">Shetty Nihal Naveen</p>
+              <div class="research-card__tags">
+                <span class="tag">Drug Discovery</span>
+                <span class="tag">Multi-Objective Optimization</span>
+                <span class="tag">Symbolic Regression</span>
+              </div>
+            </div>
+          </div>
+          <div class="research-card__back">
+            <h4>What it is</h4>
+            <p>AMODO-EO discovers and integrates new chemically meaningful objectives during active drug optimization — using symbolic regression and automated feature engineering to find emergent trade-offs invisible to the original objective set.</p>
+            <h4>Key findings</h4>
+            <ul>
+              <li>→ Consistently identified HBA/RTB ratio, MW/TPSA ratio, LogP × aromatic ring count as emergent objectives</li>
+              <li>→ Pareto front expanded into higher-dimensional chemical spaces</li>
+              <li>→ Only 1.5-2.9% hypervolume reduction vs baseline NSGA-II</li>
+              <li>→ Ablation studies confirmed statistical filtering is essential</li>
+            </ul>
+            <h4>Broader significance</h4>
+            <p>The adaptive objective discovery framework — finding what you should be optimizing for that you did not know to look for — is a general principle that informs how Grid Genesis approaches energy system optimization.</p>
+            <a href="#" class="research-card__link magnetic-btn">Read Paper →</a>
+          </div>
+        </div>
+
+        <!-- Stochastic Minds Vol I -->
+        <div class="research-card" data-tilt>
+          <div class="research-card__front">
+            <div class="research-card__cover research-card__cover--dark">
+              <svg viewBox="0 0 200 260" class="research-card__cover-art">
+                <defs><linearGradient id="rc3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1628" stop-opacity="0.95"/><stop offset="100%" stop-color="#FFB347" stop-opacity="0.15"/></linearGradient></defs>
+                <rect width="200" height="260" fill="url(#rc3)" rx="4"/>
+                <g stroke="#FFB347" stroke-width="0.4" fill="none" opacity="0.5">
+                  <path d="M40,130 Q60,80 80,130 Q100,80 120,130 Q140,80 160,130" />
+                  <path d="M40,120 Q70,90 100,120 Q130,90 160,120" opacity="0.3"/>
+                  <circle cx="60" cy="100" r="2" fill="#FFB347" opacity="0.6"/>
+                  <circle cx="100" cy="95" r="2" fill="#FFB347" opacity="0.6"/>
+                  <circle cx="140" cy="100" r="2" fill="#FFB347" opacity="0.6"/>
+                </g>
+                <text x="100" y="170" fill="#E8F4FF" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">STOCHASTIC MINDS</text>
+                <text x="100" y="185" fill="#FFB347" font-size="14" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700">VOL I</text>
+                <text x="100" y="205" fill="#FFB347" font-size="5.5" text-anchor="middle" font-family="Inter, sans-serif">Math, Models, and the Beautiful</text>
+                <text x="100" y="215" fill="#FFB347" font-size="5.5" text-anchor="middle" font-family="Inter, sans-serif">Chaos of Getting It Almost Right</text>
+              </svg>
+            </div>
+            <div class="research-card__info">
+              <div class="research-card__badges">
+                <span class="badge badge--book">BOOK</span>
+              </div>
+              <h3 class="research-card__title">Stochastic Minds: Math, Models, and the Beautiful Chaos of Getting It Almost Right — Volume I</h3>
+              <p class="research-card__authors">Author: Shetty Nihal Naveen</p>
+              <p class="research-card__authors">Editors: Shrinidhi Upadhyaya, Ashil Shetty</p>
+              <p class="research-card__pub">Published: 2026</p>
+              <div class="research-card__tags">
+                <span class="tag">Stochastic Processes</span>
+                <span class="tag">Probability Theory</span>
+                <span class="tag">Mathematical Modeling</span>
+              </div>
+            </div>
+          </div>
+          <div class="research-card__back">
+            <p>A rigorous yet deeply human exploration of stochastic mathematics — probability theory, random processes, and the mathematical machinery for reasoning under uncertainty. Written with the conviction that the most interesting problems in science are the ones where the answer is always "almost right" and understanding that <em>almost</em> is the entire discipline.</p>
+            <p>The stochastic foundations of Volume I are load-bearing for every probabilistic model Grid Genesis builds — from FluxEngine's scenario generation to GridCast-ST's calibrated uncertainty quantiles.</p>
+          </div>
+        </div>
+
+        <!-- Stochastic Minds Vol II -->
+        <div class="research-card" data-tilt>
+          <div class="research-card__front">
+            <div class="research-card__cover research-card__cover--neural">
+              <svg viewBox="0 0 200 260" class="research-card__cover-art">
+                <defs><linearGradient id="rc4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A1628" stop-opacity="0.95"/><stop offset="100%" stop-color="#00D4FF" stop-opacity="0.15"/></linearGradient></defs>
+                <rect width="200" height="260" fill="url(#rc4)" rx="4"/>
+                <g stroke="#00D4FF" stroke-width="0.4" fill="none" opacity="0.4">
+                  <circle cx="70" cy="70" r="6"/><circle cx="130" cy="70" r="6"/><circle cx="50" cy="100" r="6"/>
+                  <circle cx="100" cy="100" r="6"/><circle cx="150" cy="100" r="6"/><circle cx="80" cy="130" r="6"/>
+                  <circle cx="120" cy="130" r="6"/>
+                  <line x1="70" y1="70" x2="50" y2="100"/><line x1="70" y1="70" x2="100" y2="100"/>
+                  <line x1="130" y1="70" x2="100" y2="100"/><line x1="130" y1="70" x2="150" y2="100"/>
+                  <line x1="50" y1="100" x2="80" y2="130"/><line x1="100" y1="100" x2="80" y2="130"/>
+                  <line x1="100" y1="100" x2="120" y2="130"/><line x1="150" y1="100" x2="120" y2="130"/>
+                </g>
+                <text x="100" y="170" fill="#E8F4FF" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">STOCHASTIC MINDS</text>
+                <text x="100" y="185" fill="#00D4FF" font-size="14" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700">VOL II</text>
+                <text x="100" y="205" fill="#00D4FF" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">AI / ML / Deep Learning</text>
+              </svg>
+            </div>
+            <div class="research-card__info">
+              <div class="research-card__badges">
+                <span class="badge badge--book">BOOK</span>
+                <span class="badge badge--forthcoming">FORTHCOMING 2026</span>
+              </div>
+              <h3 class="research-card__title">Stochastic Minds Vol II: AI/ML/DL — Title TBC</h3>
+              <p class="research-card__authors">Author: Shetty Nihal Naveen</p>
+              <div class="research-card__tags">
+                <span class="tag">Artificial Intelligence</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Deep Learning</span>
+              </div>
+            </div>
+          </div>
+          <div class="research-card__back">
+            <p>The second volume in the Stochastic Minds series — extending the mathematical foundations of Volume I into artificial intelligence, machine learning, and deep learning.</p>
+            <p>Written for readers who want to understand AI not as a collection of techniques to memorize but as a coherent set of ideas trying, imperfectly and magnificently, to model the world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 8: TEAM ========== -->
+  <section id="team" class="section section--team" aria-label="Our Team">
+    <canvas id="team-canvas" class="team-canvas"></canvas>
+    <div class="container">
+      <h2 class="section-title">The Minds Behind the Grid</h2>
+      <p class="section-subtitle">Three researchers who decided equations weren't enough.</p>
+
+      <div class="team-grid team-grid--core">
+        <!-- Nihal -->
+        <div class="team-card" data-animate="left">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--blue"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Shetty Nihal Naveen</h3>
+          <p class="team-card__title">Founder & Chief Scientist</p>
+          <p class="team-card__bio">The mathematical architect of Grid Genesis. Author of Stochastic Minds Vol I & Vol II, co-author of QILTR and originator of AMODO-EO. Leads FluxEngine drawing on stochastic mathematics to build probabilistic power flow intelligence.</p>
+          <div class="team-card__interests">
+            <span class="tag">Physics-informed ML</span>
+            <span class="tag">Riemannian geometry</span>
+            <span class="tag">Probabilistic modeling</span>
+            <span class="tag">GNN architectures</span>
+            <span class="tag">Stochastic processes</span>
+          </div>
+          <div class="team-card__pubs">
+            <p class="team-card__pubs-label">Publications:</p>
+            <span>Stochastic Minds Vol I · Vol II · QILTR · AMODO-EO</span>
+          </div>
+        </div>
+
+        <!-- Ashil -->
+        <div class="team-card" data-animate="up">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--blue"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Ashil Shetty</h3>
+          <p class="team-card__title">Co-Founder & ML Engineer</p>
+          <p class="team-card__bio">Co-author of QILTR and editor of Stochastic Minds Vol I. Leads GridGuard-GNN — the graph-topology NTL detection platform. Deep expertise in graph attention networks and anomaly detection. His GAT attention mechanism makes GridGuard's explanations readable by a field crew.</p>
+          <div class="team-card__interests">
+            <span class="tag">Graph Neural Networks</span>
+            <span class="tag">Anomaly detection</span>
+            <span class="tag">NTL analytics</span>
+            <span class="tag">Spatio-temporal modeling</span>
+          </div>
+          <div class="team-card__pubs">
+            <p class="team-card__pubs-label">Publications:</p>
+            <span>QILTR (co-author) · Stochastic Minds Vol I (editor)</span>
+          </div>
+        </div>
+
+        <!-- Shrinidhi -->
+        <div class="team-card" data-animate="right">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--blue"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Shrinidhi Upadhyaya</h3>
+          <p class="team-card__title">Co-Founder & Data Engineer</p>
+          <p class="team-card__bio">Editor of Stochastic Minds Vol I and the data infrastructure architect of Grid Genesis. Builds the pipelines that feed all three products — real-time AMI ingestion, power flow data generation, satellite and NWP processing. Without Shrinidhi's pipelines, the models have nothing to learn from.</p>
+          <div class="team-card__interests">
+            <span class="tag">MLOps</span>
+            <span class="tag">TimeSeries DB</span>
+            <span class="tag">Distributed pipelines</span>
+            <span class="tag">Feature stores</span>
+            <span class="tag">Real-time inference</span>
+          </div>
+          <div class="team-card__pubs">
+            <p class="team-card__pubs-label">Publications:</p>
+            <span>Stochastic Minds Vol I (editor)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advisory board separator -->
+      <div class="team-separator">
+        <div class="team-separator__line"><span class="team-separator__pulse"></span></div>
+        <span class="team-separator__label">ADVISORY BOARD</span>
+        <div class="team-separator__line"><span class="team-separator__pulse"></span></div>
+      </div>
+
+      <div class="team-grid team-grid--advisory">
+        <!-- Dr. Shamantha -->
+        <div class="team-card team-card--advisory" data-animate="left">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--gold"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Dr. Shamantha Rai Bellipady</h3>
+          <p class="team-card__title team-card__title--gold">Strategic Advisor</p>
+          <p class="team-card__bio">Provides strategic guidance on energy sector market entry, academic-industry partnership development, and institutional relationships. Brings domain expertise critical for Grid Genesis's go-to-market strategy in Indian and emerging market utility environments.</p>
+          <div class="team-card__roles">
+            <span class="tag tag--gold">Strategic market positioning</span>
+            <span class="tag tag--gold">University-industry partnerships</span>
+            <span class="tag tag--gold">Institutional credibility</span>
+          </div>
+        </div>
+
+        <!-- Dr. Rithesh -->
+        <div class="team-card team-card--advisory" data-animate="right">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--gold"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Dr. Rithesh Pakkala P</h3>
+          <p class="team-card__title team-card__title--gold">Technical Advisor</p>
+          <p class="team-card__bio">Provides deep technical mentorship on machine learning architecture, research methodology, and the rigorous validation standards required for deploying AI in critical infrastructure. Ensures Grid Genesis's technical claims are defensible — scientifically and commercially.</p>
+          <div class="team-card__roles">
+            <span class="tag tag--gold">ML architecture review</span>
+            <span class="tag tag--gold">Research methodology</span>
+            <span class="tag tag--gold">Technical due diligence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 9: CONTACT ========== -->
+  <section id="contact" class="section section--contact" aria-label="Contact for Demo">
+    <canvas id="contact-canvas" class="contact-canvas"></canvas>
+    <div class="container contact__grid">
+      <div class="contact__info">
+        <h2 class="section-title">See Grid Genesis in Action</h2>
+        <p class="contact__desc">We give 30-minute technical demos tailored to your specific grid challenge. No slides. No buzzwords. Live models on real data — your network topology, your AMI format, your generation portfolio.</p>
+
+        <div class="contact__what">
+          <h3>What you get in 30 minutes:</h3>
+          <ul>
+            <li>→ Live FluxEngine capacity surface on a real network model</li>
+            <li>→ GridGuard-GNN anomaly scoring with full SHAP explanation cards</li>
+            <li>→ GridCast-ST probabilistic forecast with ramp detection demo</li>
+            <li>→ Direct conversation with the founding team — no sales layer</li>
+          </ul>
+        </div>
+
+        <p class="contact__early">We are early stage and we move fast. Every demo request gets a personal response within 24 hours.</p>
+
+        <div class="contact__priority">
+          <h3>Currently prioritizing:</h3>
+          <ul>
+            <li>→ Utilities in India with active NTL reduction mandates</li>
+            <li>→ Renewable developers with projects in interconnection queues</li>
+            <li>→ ISOs and grid operators exploring ML-based capacity planning</li>
+            <li>→ Research institutions interested in collaboration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact__form-wrapper">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <input type="text" id="form-name" name="name" required autocomplete="name" />
+            <label for="form-name">Full Name</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="form-org" name="organization" required autocomplete="organization" />
+            <label for="form-org">Organization</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="form-email" name="email" required autocomplete="email" />
+            <label for="form-email">Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="form-role" name="role" autocomplete="organization-title" />
+            <label for="form-role">Role</label>
+          </div>
+          <fieldset class="form-group form-group--radio">
+            <legend>What are you looking to solve?</legend>
+            <label class="radio-label"><input type="radio" name="interest" value="FluxEngine" /> Interconnection queue intelligence (FluxEngine)</label>
+            <label class="radio-label"><input type="radio" name="interest" value="GridGuard-GNN" /> Non-technical loss detection (GridGuard-GNN)</label>
+            <label class="radio-label"><input type="radio" name="interest" value="GridCast-ST" /> Renewable generation forecasting (GridCast-ST)</label>
+            <label class="radio-label"><input type="radio" name="interest" value="General" checked /> All of the above / General inquiry</label>
+          </fieldset>
+          <div class="form-group">
+            <textarea id="form-context" name="context" rows="4"></textarea>
+            <label for="form-context">Additional context</label>
+          </div>
+          <button type="submit" class="form-submit magnetic-btn">
+            <span>Schedule Demo →</span>
+          </button>
+        </form>
+
+        <div id="form-success" class="form-success" hidden>
+          <svg class="form-success__icon" viewBox="0 0 60 60" width="60" height="60">
+            <circle cx="30" cy="30" r="28" fill="none" stroke="var(--color-electric-blue)" stroke-width="2" class="form-success__circle"/>
+            <path d="M18 30 L26 38 L42 22" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="form-success__check"/>
+          </svg>
+          <p class="form-success__text">Request received. Expect our response within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="24" height="24" viewBox="0 0 60 60"><polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/><path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GRID GENESIS</span>
+      </div>
+      <p class="footer__copy">© 2026 Grid Genesis. Physics-Informed Intelligence for the Energy Transition.</p>
+      <p class="footer__location">Founded at Sahyadri College of Engineering and Management, Mangaluru</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

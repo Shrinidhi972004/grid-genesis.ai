@@ -1,0 +1,139 @@
+/* ========================================
+   ANIMATIONS — Grid Genesis
+   ======================================== */
+
+/* Float animation for scroll hint */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pulse line for metrics */
+@keyframes pulse-line {
+  0%   { left: -30%; }
+  100% { left: 100%; }
+}
+
+/* Floating math symbols */
+@keyframes float-math {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.06;
+  }
+  25% {
+    opacity: 0.08;
+  }
+  50% {
+    transform: translateY(-40px) rotate(10deg);
+    opacity: 0.04;
+  }
+  75% {
+    opacity: 0.07;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.06;
+  }
+}
+
+/* Draw circle for success */
+@keyframes draw-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Draw check for success */
+@keyframes draw-check {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Glitch text effect */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitch-text:hover::before {
+  animation: glitch-1 0.3s ease;
+  color: var(--color-electric-blue);
+  opacity: 0.8;
+}
+
+.glitch-text:hover::after {
+  animation: glitch-2 0.3s ease;
+  color: var(--color-critical-red);
+  opacity: 0.8;
+}
+
+@keyframes glitch-1 {
+  0% { transform: translate(0); opacity: 0; }
+  20% { transform: translate(-3px, 2px); opacity: 0.8; }
+  40% { transform: translate(3px, -2px); opacity: 0.6; }
+  60% { transform: translate(-1px, 1px); opacity: 0.4; }
+  80% { transform: translate(2px, -1px); opacity: 0.2; }
+  100% { transform: translate(0); opacity: 0; }
+}
+
+@keyframes glitch-2 {
+  0% { transform: translate(0); opacity: 0; }
+  20% { transform: translate(2px, -3px); opacity: 0.6; }
+  40% { transform: translate(-2px, 3px); opacity: 0.8; }
+  60% { transform: translate(1px, -1px); opacity: 0.4; }
+  80% { transform: translate(-1px, 2px); opacity: 0.2; }
+  100% { transform: translate(0); opacity: 0; }
+}
+
+/* Preloader bolt animation */
+.preloader__bolt {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: draw-bolt 1.5s ease-in-out infinite;
+}
+
+@keyframes draw-bolt {
+  0% { stroke-dashoffset: 60; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -60; }
+}
+
+/* Electric arc animation for team card border */
+@keyframes electric-arc {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Fade-in-up for section elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero__scroll-hint { animation: none; }
+  .math-sym { animation: none; }
+  .metric__pulse { animation: none; }
+  .team-separator__pulse { animation: none; }
+  .preloader__bolt { animation: none; stroke-dashoffset: 0; }
+}

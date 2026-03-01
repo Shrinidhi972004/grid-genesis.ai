@@ -1,0 +1,84 @@
+/* ========================================
+   CSS CUSTOM PROPERTIES — Grid Genesis Design System
+   ======================================== */
+
+:root {
+  /* Primary — Electric Energy */
+  --color-electric-blue: #00D4FF;
+  --color-plasma-cyan: #00FFE5;
+  --color-arc-white: #E8F4FF;
+
+  /* Secondary — Landscape */
+  --color-dusk-purple: #1A0A2E;
+  --color-twilight: #0D1B2A;
+  --color-horizon-gold: #FFB347;
+  --color-grass-dark: #0A1F0A;
+  --color-grass-mid: #1A3D1A;
+
+  /* Accent — Scientific */
+  --color-data-green: #39FF14;
+  --color-warning-amber: #FFB300;
+  --color-critical-red: #FF3333;
+
+  /* Neutral */
+  --color-void: #040810;
+  --color-surface: #0A1628;
+  --color-glass: rgba(255, 255, 255, 0.04);
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Typography Scale */
+  --text-display: clamp(64px, 8vw, 120px);
+  --text-hero: clamp(40px, 5vw, 72px);
+  --text-h1: clamp(32px, 4vw, 56px);
+  --text-h2: clamp(24px, 3vw, 40px);
+  --text-h3: clamp(20px, 2.5vw, 32px);
+  --text-body-lg: clamp(16px, 1.5vw, 20px);
+  --text-body: clamp(14px, 1.2vw, 17px);
+  --text-caption: clamp(11px, 1vw, 13px);
+
+  /* Spacing */
+  --space-unit: 8px;
+  --space-xs: calc(var(--space-unit) * 1);   /* 8px */
+  --space-sm: calc(var(--space-unit) * 2);   /* 16px */
+  --space-md: calc(var(--space-unit) * 3);   /* 24px */
+  --space-lg: calc(var(--space-unit) * 5);   /* 40px */
+  --space-xl: calc(var(--space-unit) * 8);   /* 64px */
+  --space-2xl: calc(var(--space-unit) * 12); /* 96px */
+  --space-3xl: calc(var(--space-unit) * 16); /* 128px */
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-padding: var(--space-md);
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Glass */
+  --glass-bg: rgba(10, 22, 40, 0.6);
+  --glass-border: rgba(0, 212, 255, 0.12);
+  --glass-blur: 20px;
+
+  /* Z-Index */
+  --z-canvas: 1;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-cursor: 1000;
+  --z-preloader: 9999;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-arc-white);
+  background-color: var(--color-void);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}

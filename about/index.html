@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Grid Genesis — Physics-Informed AI at the intersection of power systems, Riemannian geometry, and probabilistic ML." />
+  <title>About — Grid Genesis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/typography.css" />
+  <link rel="stylesheet" href="/src/styles/navigation.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+  <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Grid Genesis home">
+        <svg class="nav__logo-mark" width="36" height="36" viewBox="0 0 60 60">
+          <polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/>
+          <path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__logo-text">GRID GENESIS</span>
+      </a>
+      <div class="nav__links">
+        <a href="/products/" class="nav__link">Products</a>
+        <a href="/about/" class="nav__link active">About Us</a>
+        <a href="/team/" class="nav__link">Our Team</a>
+        <a href="/research/" class="nav__link">Research</a>
+        <a href="/#contact" class="nav__cta magnetic-btn">Contact for Demo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 120px;">
+    <div class="container" style="max-width: 800px;">
+      <h1 class="section-title" style="margin-bottom: var(--space-6);">About Grid Genesis</h1>
+      <blockquote style="color: var(--color-electric-blue); font-size: var(--fs-lg); font-style: italic; border-left: 2px solid var(--color-electric-blue); padding-left: var(--space-4); margin-bottom: var(--space-8);">"We build the intelligence layer that governs energy systems too complex for human intuition alone."</blockquote>
+
+      <div style="color: var(--color-cloud); line-height: 1.8; display: grid; gap: var(--space-5);">
+        <p>Grid Genesis builds physics-informed AI at the intersection of power systems engineering, Riemannian geometry, and probabilistic machine learning. We see the electricity grid not as a collection of isolated data points — but as a living graph, where every node, every edge, and every flow of electrons is connected to everything else. That topology is where the intelligence lives.</p>
+        <p>Our three products address the three most quantifiable inefficiencies in the global energy transition: $96 billion lost annually to electricity theft, 1,400 gigawatts of clean energy trapped in interconnection queues, and hundreds of millions in avoidable renewable imbalance costs caused by inadequate forecasting.</p>
+        <p>Each product is built on the same foundation — graph neural networks that respect physics, probabilistic models that quantify uncertainty honestly, and a strict principle that humans always make the final decision.</p>
+        <p>Founded by researchers from Sahyadri College of Engineering and Management, Mangaluru, Grid Genesis emerged from published work in quantum information geometry, adaptive multi-objective optimization, and spatio-temporal forecasting. We are not incrementally improving existing tools. We are replacing the mathematical foundations they are built on.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6); margin-top: var(--space-10);">
+        <div class="glass-card" style="padding: var(--space-6); text-align: center;">
+          <span style="font-size: var(--fs-3xl); color: var(--color-electric-blue); font-weight: 800;">$96B</span>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm); margin-top: var(--space-2);">Annual global electricity theft losses</p>
+        </div>
+        <div class="glass-card" style="padding: var(--space-6); text-align: center;">
+          <span style="font-size: var(--fs-3xl); color: var(--color-electric-blue); font-weight: 800;">1,000×</span>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm); margin-top: var(--space-2);">Power flow solver speedup</p>
+        </div>
+        <div class="glass-card" style="padding: var(--space-6); text-align: center;">
+          <span style="font-size: var(--fs-3xl); color: var(--color-electric-blue); font-weight: 800;">1,400 GW</span>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm); margin-top: var(--space-2);">Clean energy in US queue</p>
+        </div>
+        <div class="glass-card" style="padding: var(--space-6); text-align: center;">
+          <span style="font-size: var(--fs-3xl); color: var(--color-electric-blue); font-weight: 800;">&lt;8%</span>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm); margin-top: var(--space-2);">nRMSE forecast target</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: var(--space-16);">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="24" height="24" viewBox="0 0 60 60"><polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/><path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GRID GENESIS</span>
+      </div>
+      <p class="footer__copy">© 2026 Grid Genesis. Physics-Informed Intelligence for the Energy Transition.</p>
+    </div>
+  </footer>
+</body>
+</html>

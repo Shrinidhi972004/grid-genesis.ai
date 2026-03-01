@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grid Genesis Research — QILTR, AMODO-EO, Stochastic Minds. We publish what we build and build what we publish." />
+  <title>Research & Publications — Grid Genesis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/typography.css" />
+  <link rel="stylesheet" href="/src/styles/navigation.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+  <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Grid Genesis home">
+        <svg class="nav__logo-mark" width="36" height="36" viewBox="0 0 60 60">
+          <polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/>
+          <path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__logo-text">GRID GENESIS</span>
+      </a>
+      <div class="nav__links">
+        <a href="/products/" class="nav__link">Products</a>
+        <a href="/about/" class="nav__link">About Us</a>
+        <a href="/team/" class="nav__link">Our Team</a>
+        <a href="/research/" class="nav__link active">Research</a>
+        <a href="/#contact" class="nav__cta magnetic-btn">Contact for Demo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 120px;">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: var(--space-3);">Research & Publications</h1>
+      <p style="color: var(--color-mist); margin-bottom: var(--space-10);">We publish what we build and build what we publish.</p>
+
+      <div style="display: grid; gap: var(--space-8); max-width: 800px;">
+        <!-- QILTR -->
+        <article class="glass-card" style="padding: var(--space-6);">
+          <div class="research-card__badges" style="margin-bottom: var(--space-3);">
+            <span class="badge badge--research">RESEARCH PAPER</span>
+            <span class="badge badge--preprint">PREPRINT</span>
+          </div>
+          <h2 style="font-size: var(--fs-xl); color: var(--color-white); margin-bottom: var(--space-2);">Quantum-Inspired Local Tensor Regression (QILTR)</h2>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm);">Shetty Nihal Naveen, Ashil Shetty, B Karthik Udupa</p>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm);">Sahyadri College of Engineering and Management, Mangaluru · 2026</p>
+          <p style="color: var(--color-cloud); margin-top: var(--space-4); line-height: 1.7;">Recasts local tensor regression as a Riemannian optimization problem on the manifold of quantum states. Bures distance replaces Euclidean kernels for better-conditioned local Hessians. 4.9× improvement in outlier robustness, +1.22% on QM9 benchmark.</p>
+          <div class="research-card__tags" style="margin-top: var(--space-4);">
+            <span class="tag">Riemannian Geometry</span>
+            <span class="tag">Quantum Information</span>
+            <span class="tag">Tensor Regression</span>
+          </div>
+        </article>
+
+        <!-- AMODO-EO -->
+        <article class="glass-card" style="padding: var(--space-6);">
+          <div class="research-card__badges" style="margin-bottom: var(--space-3);">
+            <span class="badge badge--research">RESEARCH PAPER</span>
+          </div>
+          <h2 style="font-size: var(--fs-xl); color: var(--color-white); margin-bottom: var(--space-2);">AMODO-EO: Adaptive Multi-Objective Drug Optimization with Emergent Objectives</h2>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm);">Shetty Nihal Naveen</p>
+          <p style="color: var(--color-cloud); margin-top: var(--space-4); line-height: 1.7;">Discovers new chemically meaningful objectives during active drug optimization using symbolic regression and automated feature engineering. The adaptive objective discovery framework informs Grid Genesis's approach to energy system optimization.</p>
+          <div class="research-card__tags" style="margin-top: var(--space-4);">
+            <span class="tag">Drug Discovery</span>
+            <span class="tag">Multi-Objective Optimization</span>
+            <span class="tag">Symbolic Regression</span>
+          </div>
+        </article>
+
+        <!-- Stochastic Minds Vol I -->
+        <article class="glass-card" style="padding: var(--space-6);">
+          <div class="research-card__badges" style="margin-bottom: var(--space-3);">
+            <span class="badge badge--book">BOOK</span>
+          </div>
+          <h2 style="font-size: var(--fs-xl); color: var(--color-white); margin-bottom: var(--space-2);">Stochastic Minds Vol I</h2>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm);">Math, Models, and the Beautiful Chaos of Getting It Almost Right</p>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm);">Author: Shetty Nihal Naveen · Editors: Shrinidhi Upadhyaya, Ashil Shetty · 2026</p>
+          <p style="color: var(--color-cloud); margin-top: var(--space-4); line-height: 1.7;">A rigorous yet deeply human exploration of stochastic mathematics — probability theory, random processes, and the mathematical machinery for reasoning under uncertainty. Load-bearing for every probabilistic model Grid Genesis builds.</p>
+          <div class="research-card__tags" style="margin-top: var(--space-4);">
+            <span class="tag">Stochastic Processes</span>
+            <span class="tag">Probability Theory</span>
+            <span class="tag">Mathematical Modeling</span>
+          </div>
+        </article>
+
+        <!-- Stochastic Minds Vol II -->
+        <article class="glass-card" style="padding: var(--space-6);">
+          <div class="research-card__badges" style="margin-bottom: var(--space-3);">
+            <span class="badge badge--book">BOOK</span>
+            <span class="badge badge--forthcoming">FORTHCOMING 2026</span>
+          </div>
+          <h2 style="font-size: var(--fs-xl); color: var(--color-white); margin-bottom: var(--space-2);">Stochastic Minds Vol II: AI/ML/DL</h2>
+          <p style="color: var(--color-mist); font-size: var(--fs-sm);">Author: Shetty Nihal Naveen</p>
+          <p style="color: var(--color-cloud); margin-top: var(--space-4); line-height: 1.7;">The second volume extending mathematical foundations into artificial intelligence, machine learning, and deep learning. For readers who want to understand AI as a coherent set of ideas trying to model the world.</p>
+          <div class="research-card__tags" style="margin-top: var(--space-4);">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Deep Learning</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: var(--space-16);">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="24" height="24" viewBox="0 0 60 60"><polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/><path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GRID GENESIS</span>
+      </div>
+      <p class="footer__copy">© 2026 Grid Genesis. Physics-Informed Intelligence for the Energy Transition.</p>
+    </div>
+  </footer>
+</body>
+</html>

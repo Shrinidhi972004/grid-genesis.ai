@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grid Genesis Products — FluxEngine, GridGuard-GNN, GridCast-ST. Physics-Informed AI for energy systems." />
+  <title>Products — Grid Genesis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/typography.css" />
+  <link rel="stylesheet" href="/src/styles/navigation.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+  <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Grid Genesis home">
+        <svg class="nav__logo-mark" width="36" height="36" viewBox="0 0 60 60">
+          <polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/>
+          <path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__logo-text">GRID GENESIS</span>
+      </a>
+      <div class="nav__links">
+        <a href="/products/" class="nav__link active">Products</a>
+        <a href="/about/" class="nav__link">About Us</a>
+        <a href="/team/" class="nav__link">Our Team</a>
+        <a href="/research/" class="nav__link">Research</a>
+        <a href="/#contact" class="nav__cta magnetic-btn">Contact for Demo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 120px;">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: var(--space-6);">Our Products</h1>
+      <p style="color: var(--color-cloud); max-width: 700px; margin-bottom: var(--space-10); line-height: 1.7;">Three products addressing the three most quantifiable inefficiencies in the global energy transition.</p>
+
+      <div style="display: grid; gap: var(--space-8);">
+        <!-- FluxEngine -->
+        <div class="glass-card" style="padding: var(--space-8);">
+          <span class="product__badge">PRODUCT 01</span>
+          <h2 style="font-size: var(--fs-2xl); color: var(--color-white); margin: var(--space-4) 0;">FLUXENGINE™</h2>
+          <p style="color: var(--color-electric-blue); font-style: italic; margin-bottom: var(--space-4);">"We don't predict your grid's limit. We generate 10,000 parallel universes and find the MW hiding in every one."</p>
+          <p style="color: var(--color-cloud); line-height: 1.7;">Probabilistic Interconnection Intelligence. Score-based diffusion for scenario generation + heterogeneous GNN power flow surrogate. 1,000× faster than Newton-Raphson.</p>
+          <a href="/#products" style="color: var(--color-electric-blue); margin-top: var(--space-4); display: inline-block;">Learn more →</a>
+        </div>
+
+        <!-- GridGuard -->
+        <div class="glass-card" style="padding: var(--space-8);">
+          <span class="product__badge">PRODUCT 02</span>
+          <h2 style="font-size: var(--fs-2xl); color: var(--color-white); margin: var(--space-4) 0;">GRIDGUARD-GNN</h2>
+          <p style="color: var(--color-electric-blue); font-style: italic; margin-bottom: var(--space-4);">"We don't just find the needle in the haystack — we find the neighborhood conspiring to hide it."</p>
+          <p style="color: var(--color-cloud); line-height: 1.7;">Revenue Assurance & Loss Analytics. Spatio-Temporal GAT architecture detecting non-technical losses across the distribution topology. >96% F1-score.</p>
+          <a href="/#gridguard" style="color: var(--color-electric-blue); margin-top: var(--space-4); display: inline-block;">Learn more →</a>
+        </div>
+
+        <!-- GridCast -->
+        <div class="glass-card" style="padding: var(--space-8);">
+          <span class="product__badge">PRODUCT 03</span>
+          <h2 style="font-size: var(--fs-2xl); color: var(--color-white); margin: var(--space-4) 0;">GRIDCAST-ST</h2>
+          <p style="color: var(--color-electric-blue); font-style: italic; margin-bottom: var(--space-4);">"We don't forecast the sun — we forecast the shadow, station by station, minute by minute."</p>
+          <p style="color: var(--color-cloud); line-height: 1.7;">Spatio-Temporal Renewable Intelligence. Graph-Transformer + satellite integrating generation stations that sees weather events propagating across the network.</p>
+          <a href="/#gridcast" style="color: var(--color-electric-blue); margin-top: var(--space-4); display: inline-block;">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: var(--space-16);">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="24" height="24" viewBox="0 0 60 60"><polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/><path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GRID GENESIS</span>
+      </div>
+      <p class="footer__copy">© 2026 Grid Genesis. Physics-Informed Intelligence for the Energy Transition.</p>
+    </div>
+  </footer>
+</body>
+</html>

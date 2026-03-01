@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grid Genesis Team — The minds behind physics-informed AI for the energy transition." />
+  <title>Team — Grid Genesis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/typography.css" />
+  <link rel="stylesheet" href="/src/styles/navigation.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+<body>
+  <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Grid Genesis home">
+        <svg class="nav__logo-mark" width="36" height="36" viewBox="0 0 60 60">
+          <polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/>
+          <path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav__logo-text">GRID GENESIS</span>
+      </a>
+      <div class="nav__links">
+        <a href="/products/" class="nav__link">Products</a>
+        <a href="/about/" class="nav__link">About Us</a>
+        <a href="/team/" class="nav__link active">Our Team</a>
+        <a href="/research/" class="nav__link">Research</a>
+        <a href="/#contact" class="nav__cta magnetic-btn">Contact for Demo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 120px;">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: var(--space-3);">The Minds Behind the Grid</h1>
+      <p style="color: var(--color-mist); margin-bottom: var(--space-10);">Three researchers who decided equations weren't enough.</p>
+
+      <div class="team-grid team-grid--core">
+        <div class="team-card">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--blue"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Shetty Nihal Naveen</h3>
+          <p class="team-card__title">Founder & Chief Scientist</p>
+          <p class="team-card__bio">The mathematical architect of Grid Genesis. Author of Stochastic Minds Vol I & Vol II, co-author of QILTR and originator of AMODO-EO. Leads FluxEngine drawing on stochastic mathematics to build probabilistic power flow intelligence.</p>
+          <div class="team-card__interests">
+            <span class="tag">Physics-informed ML</span>
+            <span class="tag">Riemannian geometry</span>
+            <span class="tag">Probabilistic modeling</span>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--blue"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Ashil Shetty</h3>
+          <p class="team-card__title">Co-Founder & ML Engineer</p>
+          <p class="team-card__bio">Co-author of QILTR and editor of Stochastic Minds Vol I. Leads GridGuard-GNN — the graph-topology NTL detection platform. Deep expertise in graph attention networks and anomaly detection.</p>
+          <div class="team-card__interests">
+            <span class="tag">Graph Neural Networks</span>
+            <span class="tag">Anomaly detection</span>
+            <span class="tag">NTL analytics</span>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--blue"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Shrinidhi Upadhyaya</h3>
+          <p class="team-card__title">Co-Founder & Data Engineer</p>
+          <p class="team-card__bio">Editor of Stochastic Minds Vol I and the data infrastructure architect. Builds the pipelines that feed all three products — real-time AMI ingestion, power flow data generation, satellite and NWP processing.</p>
+          <div class="team-card__interests">
+            <span class="tag">MLOps</span>
+            <span class="tag">TimeSeries DB</span>
+            <span class="tag">Distributed pipelines</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-separator" style="margin: var(--space-10) 0;">
+        <div class="team-separator__line"><span class="team-separator__pulse"></span></div>
+        <span class="team-separator__label">ADVISORY BOARD</span>
+        <div class="team-separator__line"><span class="team-separator__pulse"></span></div>
+      </div>
+
+      <div class="team-grid team-grid--advisory">
+        <div class="team-card team-card--advisory">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--gold"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Dr. Shamantha Rai Bellipady</h3>
+          <p class="team-card__title team-card__title--gold">Strategic Advisor</p>
+          <p class="team-card__bio">Strategic guidance on energy sector market entry, academic-industry partnership development, and institutional relationships.</p>
+        </div>
+
+        <div class="team-card team-card--advisory">
+          <div class="team-card__photo">
+            <div class="team-card__ring team-card__ring--gold"></div>
+            <svg class="team-card__placeholder" viewBox="0 0 120 120"><circle cx="60" cy="45" r="20" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/><path d="M30 110 Q60 75 90 110" fill="none" stroke="#FFB347" stroke-width="1" opacity="0.5"/></svg>
+          </div>
+          <h3 class="team-card__name">Dr. Rithesh Pakkala P</h3>
+          <p class="team-card__title team-card__title--gold">Technical Advisor</p>
+          <p class="team-card__bio">Deep technical mentorship on ML architecture, research methodology, and rigorous validation for AI deployment in critical infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: var(--space-16);">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="24" height="24" viewBox="0 0 60 60"><polygon points="30,2 54,17 54,43 30,58 6,43 6,17" fill="none" stroke="var(--color-electric-blue)" stroke-width="1.5"/><path d="M30 12 L24 30 L34 28 L28 48" fill="none" stroke="var(--color-plasma-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GRID GENESIS</span>
+      </div>
+      <p class="footer__copy">© 2026 Grid Genesis. Physics-Informed Intelligence for the Energy Transition.</p>
+    </div>
+  </footer>
+</body>
+</html>
