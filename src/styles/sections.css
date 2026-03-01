@@ -64,6 +64,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  z-index: 2;
 }
 
 .hero-canvas {
@@ -128,6 +129,18 @@
 .section--zoom {
   height: 350vh; /* Scroll distance for scrub animation */
   position: relative;
+}
+
+.section--zoom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background: linear-gradient(to bottom, var(--color-twilight) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .tunnel-canvas {

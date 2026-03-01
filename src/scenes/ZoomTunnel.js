@@ -66,7 +66,8 @@ export class ZoomTunnel {
 
   _initScene() {
     this.scene = new Scene();
-    this.scene.background = new Color(COLORS.void);
+    // Start with a color that matches the hero scene's twilight ambience
+    this.scene.background = new Color(0x0D1B2A);
 
     this.camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
     this.camera.position.set(0, 0, 5);
@@ -79,7 +80,7 @@ export class ZoomTunnel {
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio(this.quality.pixelRatio);
-    this.renderer.setClearColor(COLORS.void, 1);
+    this.renderer.setClearColor(0x0D1B2A, 1); // Match hero twilight on init
 
     // Lighting
     const ambient = new AmbientLight(0x112233, 0.3);
@@ -176,17 +177,19 @@ export class ZoomTunnel {
     this.tunnelGroup.add(this.tunnelMesh);
 
     // Ring structures along tunnel for depth cues
+    this.tunnelRings = [];
     for (let i = 0; i < 30; i++) {
       const ringGeo = new TorusGeometry(tunnelRadius + 0.1, 0.05, 8, 32);
       const ringMat = new MeshBasicMaterial({
         color: COLORS.electricBlue,
         transparent: true,
-        opacity: 0.15,
+        opacity: 0, // Start invisible, fade in with scroll
       });
       const ring = new Mesh(ringGeo, ringMat);
       ring.position.z = -i * 3.3;
       ring.rotation.x = Math.PI / 2;
       this.tunnelGroup.add(ring);
+      this.tunnelRings.push(ring);
     }
 
     this.scene.add(this.tunnelGroup);
@@ -340,16 +343,28 @@ export class ZoomTunnel {
     if (this.tunnelMesh) {
       this.tunnelMesh.material.uniforms.uTime.value = this.time;
       this.tunnelMesh.material.uniforms.uProgress.value = progress;
+      // Fade in the tunnel walls gently
+      this.tunnelMesh.material.opacity = Math.min(1.0, progress / 0.15);
     }
 
-    // Update electrons (gentle speed ramp)
+    // Fade in tunnel rings
+    if (this.tunnelRings) {
+      const ringOpacity = Math.min(0.15, Math.max(0, (progress - 0.05) / 0.15) * 0.15);
+      for (const ring of this.tunnelRings) {
+        ring.material.opacity = ringOpacity;
+      }
+    }
+
+    // Update electrons (gentle speed ramp + fade in)
     if (this.electronMat) {
       this.electronMat.uniforms.uTime.value = this.time * (0.3 + progress * 0.8);
+      this.electronMat.opacity = Math.min(1.0, Math.max(0, (progress - 0.05) / 0.15));
     }
 
-    // Atomic points
+    // Atomic points (fade in)
     if (this.atomicPoints) {
       this.atomicPoints.material.uniforms.uTime.value = this.time;
+      this.atomicPoints.material.opacity = Math.min(1.0, Math.max(0, (progress - 0.05) / 0.15));
     }
 
     // Post-processing intensity — gentle ramp
@@ -365,8 +380,14 @@ export class ZoomTunnel {
       }
     }
 
-    // Background color transition (subtle brightening, NOT full white)
-    if (progress > 0.65 && progress < 0.8) {
+    // Background color transition — fade from hero ambience to deep void, then subtle brighten for reveal
+    if (progress < 0.2) {
+      // Gradually darken from twilight to void
+      const t = progress / 0.2;
+      const eased = t * t * (3 - 2 * t);
+      const col = new Color(0x0D1B2A).lerp(new Color(COLORS.void), eased);
+      this.scene.background = col;
+    } else if (progress > 0.65 && progress < 0.8) {
       const t = (progress - 0.65) / 0.15;
       const eased = t * t * (3 - 2 * t);
       const col = new Color(COLORS.void).lerp(new Color(0x1A2840), eased);
@@ -376,12 +397,13 @@ export class ZoomTunnel {
       const eased = t * t * (3 - 2 * t);
       const col = new Color(0x1A2840).lerp(new Color(COLORS.void), eased);
       this.scene.background = col;
-    } else {
+    } else if (progress >= 0.2 && progress <= 0.65) {
       this.scene.background = new Color(COLORS.void);
     }
 
-    // Light intensity — gentle ramp
-    this.coreLight.intensity = 1.5 + progress * 2;
+    // Light intensity — start dim, gently ramp
+    const lightFade = Math.min(1.0, progress / 0.2);
+    this.coreLight.intensity = (1.5 + progress * 2) * lightFade;
   }
 
   /**

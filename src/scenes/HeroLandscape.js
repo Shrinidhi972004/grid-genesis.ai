@@ -183,19 +183,36 @@ export class HeroLandscape {
   }
 
   /**
-   * Create transmission towers in diminishing perspective
+   * Create transmission towers zigzagging across the landscape
    */
   _createTowers() {
     this.towers = [];
     const towerCount = 8;
 
+    // Zigzag path: towers alternate left-right with increasing depth
+    // First tower starts on the right side, then crosses to left, etc.
+    const towerPositions = [
+      { x:  18, z: -10  },  // Right foreground
+      { x: -15, z: -45  },  // Cross to left
+      { x:  20, z: -80  },  // Cross to right
+      { x: -12, z: -115 },  // Cross to left
+      { x:  16, z: -155 },  // Cross to right
+      { x:  -8, z: -195 },  // Cross to left
+      { x:  12, z: -235 },  // Cross to right (distant)
+      { x:  -5, z: -275 },  // Cross to left (far)
+    ];
+
     for (let i = 0; i < towerCount; i++) {
       const tower = this._buildTower();
-      const z = -i * 40 - 20;  // Receding into distance
-      const x = (i % 2 === 0 ? 0.5 : -0.5) * 2; // Slight stagger
+      const { x, z } = towerPositions[i];
       const terrainY = this._getTerrainHeight(x, z);
       tower.position.set(x, terrainY, z);
       tower.scale.setScalar(1 - i * 0.03); // Slightly smaller in distance
+      // Face toward next tower
+      if (i < towerCount - 1) {
+        const next = towerPositions[i + 1];
+        tower.rotation.y = Math.atan2(next.x - x, next.z - z);
+      }
       this.group.add(tower);
       this.towers.push(tower);
     }
@@ -293,9 +310,9 @@ export class HeroLandscape {
 
     // Generate catenary curve points
     const points = [];
-    const segments = 32;
+    const segments = 48;
     const span = start.distanceTo(end);
-    const sag = 1.5 + lineIdx * 0.3; // More sag on lower lines
+    const sag = 2.5 + lineIdx * 0.5; // More sag for longer diagonal spans
 
     for (let j = 0; j <= segments; j++) {
       const t = j / segments;
@@ -306,7 +323,7 @@ export class HeroLandscape {
     }
 
     const curve = new CatmullRomCurve3(points);
-    const tubeGeo = new TubeGeometry(curve, 32, 0.025, 6, false);
+    const tubeGeo = new TubeGeometry(curve, 48, 0.03, 6, false);
 
     // Electricity shader material
     const mat = new ShaderMaterial({
@@ -389,8 +406,8 @@ export class HeroLandscape {
     this._treePhases = [];
 
     for (let i = 0; i < treeCount; i++) {
-      const x = randomRange(-80, 80);
-      const z = randomRange(-10, -120);
+      const x = randomRange(-100, 100);
+      const z = randomRange(-10, -250);
       const y = this._getTerrainHeight(x, z);
       const scale = randomRange(0.6, 1.4);
 

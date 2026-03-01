@@ -72,14 +72,14 @@ export class SceneManager {
       0.1,
       1000
     );
-    this.camera.position.set(0, 5, 30);
-    this.camera.lookAt(0, 3, 0);
+    this.camera.position.set(0, 12, 40);
+    this.camera.lookAt(0, 5, -40);
   }
 
   _initScene() {
     this.scene = new ThreeScene();
     this.scene.background = new Color(COLORS.void);
-    this.scene.fog = new FogExp2(COLORS.twilight, 0.012);
+    this.scene.fog = new FogExp2(COLORS.twilight, 0.006);
   }
 
   _initPostProcessing() {
